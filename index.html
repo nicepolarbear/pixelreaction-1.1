@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+        <div id="statsThings">
+            <button onmousedown="statsOpen()" id="statsIcon">
+                <img src="textures/stats.png" alt="stats">
+            </button>
+            <button onmousedown="statsClose()" id="closeStatsIcon">
+                <img src="textures/close.png" alt="close">
+            </button>
+        </div>
+        
+        <div id="shopThings">
+            <div id="coins">
+                <p id="coinAmount">0</p>
+                <img class="coinImg" src="textures/coin2.png" alt="coin">
+            </div>
+            <button onmousedown="shopClose()" id="closeShopIcon">
+                <img src="textures/close.png" alt="close">
+            </button>
+            <button onmousedown="shopOpen()" id="shopIcon">
+                <img src="textures/shop.png" alt="shop">
+            </button>
+        </div>
+    </header>
+
+    <div id="gameStartMenu">
+        <h1 id="mainTitle">Pixel Reaction Game</h1>
+        <button onclick="gameStart()" id="gameStartButton">-Start-</button>
+    </div>
+
+    <div id="gameplay">
+        <h1 id="countdown"></h1>
+        <div id="tooFast" onmousedown="tooFast()"></div>
+        <div onmousedown="gameStop()" id="itemSpawn">
+
+        </div>
+        <div id="timeDisplay">
+            0ms
+        </div>
+        <button onclick="gameStart()" id="gameStartButton2">-Play Again-</button>
+        <p id="clickedTooFast">you clicked too fast!</p>
+        <div id="coinsGained">
+            <p id="coinsGainedNumber">coins gained: 0</p>
+            <img class="coinImg" src="textures/coin2.png" alt="coin">
+        </div>
+    </div>
+
+    <div id="stats">
+        <h1>your personal best:</h1>
+        <p id="pb"></p>
+
+        <h1>your avarge reaction:</h1>
+        <p id="avg"></p>
+    </div>
+    
+
+    <div id="shop">
+        <div id="side1" class="shopSide">
+
+            <div class="shopItem">
+                <h1>Stick</h1>
+                <img class="shopItemImg" src="items/stick.png" alt="">
+                <a>coin boost: x1.5</a>
+                <button onclick="buyUpgrade(0, 10000)" class="buyButton" id="buyButton1">
+                    <h1>buy</h1>
+                    <p>cost: 10k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford1" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 10k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton1">
+                    <h1>bought</h1>
+                </button>
+                
+            </div>
+
+            <div class="shopItem">
+                <h1>Leather</h1>
+                <img class="shopItemImg" src="items/leather.png" alt="">
+                <a>coin boost: x2</a>
+                <button onclick="buyUpgrade(1, 25000)" class="buyButton" id="buyButton2">
+                    <h1>buy</h1>
+                    <p>cost: 25k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford2" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 25k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton2">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+            <div class="shopItem">
+                <h1>Wood</h1>
+                <img class="shopItemImg" src="items/wood.png" alt="">
+                <a>coin boost: x2.5</a>
+                <button onclick="buyUpgrade(2, 50000)" class="buyButton" id="buyButton3">
+                    <h1>buy</h1>
+                    <p>cost: 50k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford3" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 50k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton3">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+            <div class="shopItem">
+                <h1>Rock</h1>
+                <img class="shopItemImg" src="items/rock.png" alt="">
+                <a>coin boost: x3</a>
+                <button onclick="buyUpgrade(3, 100000)" class="buyButton" id="buyButton4">
+                    <h1>buy</h1>
+                    <p>cost: 100k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford4" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 100k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton4">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+            <div class="shopItem">
+                <h1>Brick</h1>
+                <img class="shopItemImg" src="items/brick.png" alt="">
+                <a>coin boost: x5</a>
+                <button onclick="buyUpgrade(4, 250000)" class="buyButton" id="buyButton5">
+                    <h1>buy</h1>
+                    <p>cost: 250k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford5" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 250k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton5">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+            <div class="shopItem">
+                <h1>Copper</h1>
+                <img class="shopItemImg" src="items/copper.png" alt="">
+                <a>coin boost: x7.5</a>
+                <button onclick="buyUpgrade(5, 500000)" class="buyButton" id="buyButton6">
+                    <h1>buy</h1>
+                    <p>cost: 500k 
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford6" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 500k 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton6">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+            <div class="shopItem">
+                <h1>Iron</h1>
+                <img class="shopItemImg" src="items/iron.png" alt="">
+                <a>coin boost: x10</a>
+                <button onclick="buyUpgrade(6, 1000000)" class="buyButton" id="buyButton7">
+                    <h1>buy</h1>
+                    <p>cost: 1m
+                        <img class="coinImg" src="textures/coin2.png" alt="">
+                    </p>
+                </button>
+                <div id="cantAfford7" class="cantAfford">
+                    <button class="cantAffordBuyButton">
+                        <h1>buy</h1>
+                        <p>cost: 1m 
+                            <img class="coinImg" src="textures/coin2.png" alt="">
+                        </p>
+                    </button>
+                    <p class="cantAffordText">can't afford!</p>
+                </div>
+                <button class="boughtButton" id="boughtButton7">
+                    <h1>bought</h1>
+                </button>
+                
+
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
